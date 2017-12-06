@@ -6,64 +6,6 @@
 	<title> RobertBlack portfolio</title>
 	<link rel="stylesheet" type="text/css" href="Styles.css">
 	<script>
-		/*function getCookie(cookieName) {
-			var name = cookieName + "=";
-			var cookieList = document.cookie.split(';');
-			for (var i = 0; i < cookieList.length; i++) {
-				var cookie = cookieList[i];
-				while (cookie.charAt(0) == ' ') {
-					cookie = cookie.substring(1);
-				}
-				if (cookie.indexOf(name) == 0) {
-					return cookie.substring(name.length, cookie.length);
-				}
-			}
-			return "";
-		} 
-
-		var name = getCookie('username');
-		if (name != '') {
-			alert('can you believe you\'ve been here' + '' + name);
-		} else {
-			name = prompt('Please enter your name:', '');
-			if (name != '' && name != null) {
-				document.cookie = `username${name}`
-			}
-		} */
-
-		function setCookie(cookieName, cookieValue, expireDay) {
-			var date = new Date();
-			date.setTime(date.getTime() + (expireDay * 24 * 60 * 60 * 1000));
-			var expires = "expires=" + date.toUTCString();
-			document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/";
-		}
-
-		function getCookie(cookieName) {
-			var name = cookieName + "=";
-			var cookieList = document.cookie.split(';');
-			for (var i = 0; i < cookieList.length; i++) {
-				var cookie = cookieList[i];
-				while (cookie.charAt(0) == ' ') {
-					cookie = cookie.substring(1);
-				}
-				if (cookie.indexOf(name) == 0) {
-					return cookie.substring(name.length, cookie.length);
-				}
-			}
-			return "";
-		}
-
-		function checkCookie() {
-			var user = getCookie("username");
-			if (user != "") {
-				console.log("Welcome again " + user);
-			} else {
-				user = prompt("Please enter your name:", "");
-				if (user != "" && user != null) {
-					setCookie("username", user, 365);
-				}
-			}
-		}
 	</script>
 </head>
 
@@ -74,14 +16,19 @@
 		<h1>Robert Black JR portfolio</h1>
 	</header>
 
-	<img id="logo" style="float: left" src="http://i.imgur.com/nTgFdNf.png" alt="My logo" />
+	<img id="logo" style="float: left" src="images/logo.png" alt="My logo" />
 
 	<nav>
-		<a href="" class="links">Home</a><br>
-		<a href="About-me.html" class="links">About Me</a><br>
-		<a href="Work.html" class="links">Work</a><br>
-		<a href="Contact-us.html" class="links">Contact Us</a><br>
-		<a href="Resume.html" class="links">Resume</a><br>
+		<a href="" class="links">Home</a>
+		<br>
+		<a href="About-me.html" class="links">About Me</a>
+		<br>
+		<a href="Gallery.html" class="links">Gallery</a>
+		<br>
+		<a href="Contact-us.html" class="links">Contact Us</a>
+		<br>
+		<a href="Resume.html" class="links">Resume</a>
+		<br>
 	</nav>
 
 	<section>

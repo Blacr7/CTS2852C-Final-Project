@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Work</title>
+	<link rel="stylesheet" type="text/css" href="Styles.css">
+	<script type="text/javascript">
+		var numslides = 0;
+		var currentslide = 0;
+		var slides = new Array();
+		function StartSlideShow() {
+		  var img = document.getElementsByClassName('Gallery');
+		  for (var i=0;i<img.length;i++) {
+			slides[i] = img[i];
+			if (numslides==0) {
+			  img[i].style.display = 'block';
+			} else {
+			  img[i].style.display = 'none';
+			}
+			img[i].style.cursor = 'pointer';
+			img[i].onclick = NextSlide;
+			numslides++;
+		  }
+		}
+		function NextSlide() {
+		  slides[currentslide].style.display = 'none';
+		  currentslide++;
+		  if (currentslide >= numslides) currentslide = 0;
+		  slides[currentslide].style.display = 'block';
+		}
+		window.onload = StartSlideShow;
+	 </script>
+</head>
+
+<body>
+	<div id="leftsidebar">
+	</div>
+	<div id="rightsidebar">
+	</div>
+
+	<img class="logo" style="float: left" src="images/logo.png" alt="my logo" />
+
+	<header>
+		<h1>Robert Black JR portfolio</h1>
+	</header>
+
+	<nav>
+		<a href="index.html" class="links">Home</a><br>
+		<a href="About-me.html" class="links">About Me</a><br>
+		<a href="" class="links">Gallery</a><br>
+		<a href="Contact-us.html" class="links">Contact Us</a><br>
+		<a href="Resume.html" class="links">Resume</a><br>
+	</nav>
+
+	<div id="divGallery">
+			<img class="Gallery" src="images/html5_logo.png" width="400" height="300" alt="First picture">
+			<img class="Gallery" src="images/css_logo.png" width="400" height="300" alt="Second picture">
+			<img class="Gallery" src="images/js_logo.png" width="400" height="300" alt="Third picture">
+			<img class="Gallery" src="images/jquery_logo.png" width="400" height="300" alt="Fourth picture">
+			<img class="Gallery" src="images/python_logo.png" width="400" height="300" alt="Fifth picture">
+			<p>Click the image to advance the slides.</p>
+	</div>
+
+	<div class="footer">
+		<em>(954)-296-0361</em>
+		<em>blacr7@mail.broward.edu</em>
+	</div class="footer">
+</body>
+
+
+</html>
