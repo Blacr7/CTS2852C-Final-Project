@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<title> Contact Us</title>
 	<link rel="stylesheet" type="text/css" href="Styles.css">
+
 </head>
 
 <body>
@@ -21,26 +22,39 @@
 	<img class="logo" style="float: left" src="images/logo.png" alt="My logo" />
 
 	<nav>
-		<a href="index.html" class="links">Home</a>
-		<br>
-		<a href="aboutme.html" class="links">About Me</a>
-		<br>
-		<a href="Gallery.html" class="links">Gallery</a>
-		<br>
-		<a href="" class="links">Contact Us</a>
-		<br>
-		<a href="mypage.html" class="links">Resume</a>
-		<br>
+		<ul>
+			<li>
+				<a href="index.html" class="links">Home</a>
+			</li>
+			<br>
+			<li>
+				<a href="aboutme.html" class="links">About Me</a>
+			</li>
+			<br>
+			<li>
+				<a href="Gallery.html" class="links">Gallery</a>
+			</li>
+			<br>
+			<li>
+				<a href="" class="links">Contact Us</a>
+			</li>
+			<br>
+			<li>
+				<a href="mypage.html" class="links">Resume</a>
+			</li>
+			<br>
+		</ul>
+
 	</nav>
 
 	<section>
 		<form id="Contact-Us" action="http://ss1.ciwcertified.com/cgi-bin/process.pl" novalidate;>
 			<div id="divForm">
-				<input id="fName" type="text" Name="first Name" placeholder="Your First Name">
+				<input class="name" type="text" Name="first Name" placeholder="Your First Name" onblur="validation()">
 				<br>
 				<br>
 
-				<input id="lName" type="text" Name="last Name" placeholder="Your Last Name">
+				<input class="name" type="text" Name="last Name" placeholder="Your Last Name" onblur="validation()">
 				<br>
 				<br>
 
@@ -48,7 +62,13 @@
 				<br>
 				<br>
 
-				<textarea form="Contact-Us" id="Comments" type="text" Name="Comments" placeholder="Type your message here" rows="10" cols="60" maxlength="500"></textarea>
+				<input id="password" type="password" Name="Password" placeholder="*******">
+				<br>
+				<br>
+
+				<textarea id="Comments" form="Contact-Us" type="text" Name="Comments" placeholder="Type your message here" rows="10" cols="60"
+				 maxlength="500"></textarea>
+				<div id="characterRemaining"></div>
 				<br>
 				<br>
 
@@ -63,6 +83,35 @@
 		<em>(954)-296-0361</em>
 		<em>blacr7@mail.broward.edu</em>
 	</div class="footer">
+
+	<script>
+		this.onload = function () {
+			remaining();
+		}
+
+		function remaining() {
+			var maxLength = document.querySelector("#Comments").getAttribute('maxlength')
+			document.querySelector('#characterRemaining').textContent = maxLength + " Characters Remaining";
+
+			document.querySelector("#Comments").addEventListener('keyup', function () {
+				var currentLength = document.querySelector("#Comments").value.length;
+				var currentRemaining = maxLength - currentLength;
+
+				document.querySelector('#characterRemaining').textContent = currentRemaining + " Characters Remaining";
+			})
+		}
+
+		function validation() {
+			for (i = 0; i < 2; i++) {
+				while (typeof document.querySelectorAll('.name')[i].value == Number) {
+					document.querySelectorAll('.name')[i].style.color = 'red'
+				}
+				document.querySelectorAll('.name')[i].style.color = 'black'
+			}
+		}
+
+
+	</script>
 </body>
 
 </html>
