@@ -3,13 +3,13 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Work</title>
+	<title>Gallery</title>
 	<link rel="stylesheet" type="text/css" href="Styles.css">
 	<script type="text/javascript">
 		var numslides = 0;
 		var currentslide = 0;
 		var slides = new Array();
-		function StartSlideShow() {
+		function gallery() {
 			var img = document.getElementsByClassName('Gallery');
 			for (var i = 0; i < img.length; i++) {
 				slides[i] = img[i];
@@ -19,17 +19,17 @@
 					img[i].style.display = 'none';
 				}
 				img[i].style.cursor = 'pointer';
-				img[i].onclick = NextSlide;
+				img[i].onclick = nextImage;
 				numslides++;
 			}
 		}
-		function NextSlide() {
+		function nextImage() {
 			slides[currentslide].style.display = 'none';
 			currentslide++;
 			if (currentslide >= numslides) currentslide = 0;
 			slides[currentslide].style.display = 'block';
 		}
-		window.onload = StartSlideShow;
+		window.onload = gallery;
 	</script>
 </head>
 

@@ -50,11 +50,11 @@
 	<section>
 		<form id="Contact-Us" action="http://ss1.ciwcertified.com/cgi-bin/process.pl" novalidate;>
 			<div id="divForm">
-				<input class="name" type="text" Name="first Name" placeholder="Your First Name" onblur="validation()">
+				<input id="fName" type="text" Name="first Name" placeholder="Your First Name" required onblur="validationName()" >
 				<br>
 				<br>
 
-				<input class="name" type="text" Name="last Name" placeholder="Your Last Name" onblur="validation()">
+				<input id="lName" type="text" Name="last Name" placeholder="Your Last Name" required onblur="validationName()" >
 				<br>
 				<br>
 
@@ -62,7 +62,7 @@
 				<br>
 				<br>
 
-				<input id="password" type="password" Name="Password" placeholder="*******">
+				<input id="password" type="password" Name="Password" placeholder="*******" required>
 				<br>
 				<br>
 
@@ -101,15 +101,38 @@
 			})
 		}
 
-		function validation() {
-			for (i = 0; i < 2; i++) {
-				while (typeof document.querySelectorAll('.name')[i].value == Number) {
-					document.querySelectorAll('.name')[i].style.color = 'red'
-				}
-				document.querySelectorAll('.name')[i].style.color = 'black'
+		function validationName() {
+			var firstName = document.querySelector('#fName');
+			var lastName = document.querySelector('#lName');
+			// first name validation
+			if (firstName.value.match(/^[a-zA-Z ]*$/) == null) {
+				firstName.style.color = 'red';
+				firstName.style.fontStyle = 'italic';
+			} else {
+				firstName.style.color = 'black';
+				firstName.style.fontStyle = 'normal';
+			}
+			// last name validation
+			if (lastName.value.match(/^[a-zA-Z ]*$/) == null) {
+				lastName.style.color = 'red';
+				lastName.style.fontStyle = 'italic';
+			} else {
+				lastName.style.color = 'black';
+				lastName.style.fontStyle = 'normal';
 			}
 		}
 
+		function validationPassword(){
+			var password = document.querySelector('#password');
+			var strength = ''
+
+			var minimumReq = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{6,})")
+			
+			if (strength == 'weak'){
+				password.style.color = 'red';
+				password.style.fontStyle = 'italic';
+			}
+		}
 
 	</script>
 </body>
