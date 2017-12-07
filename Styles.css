@@ -34,26 +34,6 @@ header {
     overflow-y:auto;
 }
 
-#divGallery {
-    padding-top: 5%;
-    display: block;
-    text-align: center;
-    margin: auto;
-    width: 20%;
-}
-body {
-    background-color: #cccccc;
-    font-family: Verdana;
-}
-
-section {
-    text-align: center;
-    margin: auto;
-    width: 50%; 
-    padding-top: 5%;
-    font-size: 18;
-}
-
 .footer {
     position: fixed;
     bottom: 0;
@@ -64,11 +44,29 @@ section {
     text-align: center;
     word-spacing: 30px;
 }
+body {
+    background-color: #cccccc;
+    font-family: Verdana;
+}
+
+#divGallery {
+    padding-top: 5%;
+    display: block;
+    text-align: center;
+    margin: auto;
+    width: 20%;
+}
+section {
+    text-align: center;
+    margin: auto;
+    width: 50%; 
+    padding-top: 5%;
+    font-size: 18;
+}
 
 .header { padding-left: 11%; font-family: verdana; }
 .content { padding-left: 15%; font-family: verdana;}
 .experience{ padding-left: 4%; }
-
 
 ul {
     list-style-type: none;
@@ -88,4 +86,8 @@ li a {
 li a:hover {
     background-color: #555;
     color: white;
+}
+
+#alignLeft{
+    width: 50%;
 }
