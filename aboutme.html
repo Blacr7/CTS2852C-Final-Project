@@ -6,7 +6,31 @@
 	<title> About Me</title>
 	<link rel="stylesheet" type="text/css" href="Styles.css">
 	<script src="Scripts/navigation.js"></script>
-	<script type="text/javascript" src="Scripts/galleryScript.js"></script>
+	<script>
+		var numslides = 0;
+		var currentslide = 0;
+		var slides = new Array();
+		function gallery() {
+			var img = document.getElementsByClassName('Gallery');
+			for (var i = 0; i < img.length; i++) {
+				slides[i] = img[i];
+				if (numslides == 0) {
+					img[i].style.display = 'block';
+				} else {
+					img[i].style.display = 'none';
+				}
+				img[i].style.cursor = 'pointer';
+				img[i].onclick = nextImage;
+				numslides++;
+			}
+		}
+		function nextImage() {
+			slides[currentslide].style.display = 'none';
+			currentslide++;
+			if (currentslide >= numslides) currentslide = 0;
+			slides[currentslide].style.display = 'block';
+		}
+	</script>
 </head>
 
 <body onload="navBar(1);gallery();">
@@ -53,10 +77,10 @@
 	<section>
 		<p> Hello, my name is Robert Black i am a Jamaican American college student and aspiring Web Developer/Programmer if you need
 			HTML/CSS Development, Website Maintenance, or Tech Support I am currently living in Sunrise Florida. I have been working
-			with computers for the better part of 16 years, more than half of my life and I am looking for the opportunity to turn
-			my life long hobby into a career that can hopefully leave me both economically and intellectually satisfied. My current
-			goal is to further my skills and gain a general knowledge of all things computer. I hope to one day become the god of
-			all things computer that my non tech savy relatives think I am!
+			with computers for the better part of 16 years, more than half of my life and I have picked up a lot of things along the
+			way. I am looking for the opportunity to turn my life long hobby into a career that can hopefully leave me both economically
+			and intellectually satisfied. My current goal is to further my skills and gain a general knowledge of all things computer.
+			I hope to one day become the god of all things computer that my non tech savy relatives think I am!
 		</p>
 
 		<p>

@@ -10,14 +10,24 @@ function gallery() {
         } else {
             img[i].style.display = 'none';
         }
-        img[i].style.cursor = 'pointer';
-        img[i].onclick = nextImage;
-        numslides++;
+
+        document.querySelector('#Next').onclick = nextImage, numslides++;
+        document.querySelector('#Prev').onclick = prevImage;
+        
     }
+    setInterval(nextImage, 5000);
 }
+
 function nextImage() {
     slides[currentslide].style.display = 'none';
     currentslide++;
     if (currentslide >= numslides) currentslide = 0;
+    slides[currentslide].style.display = 'block';
+}
+
+function prevImage() {
+    slides[currentslide].style.display = 'none';
+    currentslide--;
+    if (currentslide < 0) currentslide = 4;
     slides[currentslide].style.display = 'block';
 }

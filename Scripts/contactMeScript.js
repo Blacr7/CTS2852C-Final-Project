@@ -75,3 +75,16 @@ function validationPassword() {
 
     })
 }
+
+function validationEmail(){
+    var emailreg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var email = document.querySelector('#email');
+
+    if(email.value.match(emailreg) == null){
+        email.style.color = 'red';
+        email.style.fontStyle = 'italic';
+    }else {
+        email.style.color = 'black';
+        email.style.fontStyle = 'normal';
+    }
+}

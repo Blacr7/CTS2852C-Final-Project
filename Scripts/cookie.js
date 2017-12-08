@@ -12,6 +12,8 @@ function setCookie() {
 
 // get the cookies from the users last visit
 function getCookie() {
+    var visits = 0;
+
     if (document.cookie == "") {// if no cookies exit
         userName.enter = prompt("Please Enter your name", '');
         setCookie();
@@ -23,11 +25,20 @@ function getCookie() {
             while (firstChar.charAt(0) == ' ') {
                 firstChar = firstChar.substring(1);
             }
-            document.getElementById('yourName').innerHTML = `Hello ${content[1]}`;
+            document.getElementById('yourName').innerHTML = `Hello ${content[1]}, you've been here ${localStorage.Visits = Number(localStorage.Visits)+1} time(s)!`;
+
             if (firstChar.indexOf(name) == 0) {
                 return firstChar.substring(name.length, firstChar.length);
             }
         }
     }
-    document.getElementById('yourName').innerHTML = `Hello ${userName.enter}`;
+
+    if (typeof(Storage) !== "undefined") {
+        localStorage.setItem("Visits", visits);
+    }else{
+        document.querySelector('#yourName').innerHTML = "Sorry, your browser does not support web storage"
+    }
+
+    document.getElementById('yourName').innerHTML = `Hello ${userName.enter}, This is the first time You've been here!`;
+    
 }
