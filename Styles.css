@@ -73,7 +73,6 @@ ul {
     margin: 0;
     padding: 0;
     width: 100%;
-    background-color: gray;
 }
 
 li a {
@@ -88,6 +87,4 @@ li a:hover {
     color: white;
 }
 
-#alignLeft{
-    width: 50%;
-}
+

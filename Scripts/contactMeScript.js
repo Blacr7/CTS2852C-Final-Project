@@ -1,8 +1,3 @@
-this.onload = function () {
-    remaining();
-    validationPassword()
-}
-
 function remaining() {
     var maxLength = document.querySelector("#Comments").getAttribute('maxlength')
     document.querySelector('#characterRemaining').textContent = maxLength + " Characters Remaining";

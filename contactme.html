@@ -5,47 +5,21 @@
 	<meta charset="utf-8">
 	<title> Contact Us</title>
 	<link rel="stylesheet" type="text/css" href="Styles.css">
-
+	<script src="Scripts/navigation.js"></script>
 </head>
 
-<body>
+<body onload="remaining(); validationPassword(); navBar(3);">
 
 	<div id="leftsidebar">
 	</div>
 	<div id="rightsidebar">
 	</div>
 
-	<header>
+	<header id='header'>
 		<h1>Robert Black JR portfolio</h1>
 	</header>
 
 	<img class="logo" style="float: left" src="images/logo.png" alt="My logo" />
-
-	<nav>
-		<ul>
-			<li>
-				<a href="index.html" class="links">Home</a>
-			</li>
-			<br>
-			<li>
-				<a href="aboutme.html" class="links">About Me</a>
-			</li>
-			<br>
-			<li>
-				<a href="Gallery.html" class="links">Gallery</a>
-			</li>
-			<br>
-			<li>
-				<a href="" class="links">Contact Us</a>
-			</li>
-			<br>
-			<li>
-				<a href="mypage.html" class="links">Resume</a>
-			</li>
-			<br>
-		</ul>
-
-	</nav>
 
 	<section>
 		<form id="Contact-Us" action="http://ss1.ciwcertified.com/cgi-bin/process.pl" novalidate;>
@@ -84,7 +58,7 @@
 		<em>blacr7@mail.broward.edu</em>
 	</div class="footer">
 
-	<script src="contactMeScript.js"></script>
+	<script src="Scripts/contactMeScript.js"></script>
 </body>
 
 </html>

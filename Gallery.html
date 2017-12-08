@@ -5,69 +5,22 @@
 	<meta charset="utf-8">
 	<title>Gallery</title>
 	<link rel="stylesheet" type="text/css" href="Styles.css">
-	<script type="text/javascript">
-		var numslides = 0;
-		var currentslide = 0;
-		var slides = new Array();
-		function gallery() {
-			var img = document.getElementsByClassName('Gallery');
-			for (var i = 0; i < img.length; i++) {
-				slides[i] = img[i];
-				if (numslides == 0) {
-					img[i].style.display = 'block';
-				} else {
-					img[i].style.display = 'none';
-				}
-				img[i].style.cursor = 'pointer';
-				img[i].onclick = nextImage;
-				numslides++;
-			}
-		}
-		function nextImage() {
-			slides[currentslide].style.display = 'none';
-			currentslide++;
-			if (currentslide >= numslides) currentslide = 0;
-			slides[currentslide].style.display = 'block';
-		}
-		window.onload = gallery;
-	</script>
+	<script src="Scripts/navigation.js"></script>
+	<script type="text/javascript" src="Scripts/galleryScript.js"></script>
 </head>
 
-<body>
+<body onload="navBar(2);gallery();">
 	<div id="leftsidebar"></div>
 	<div id="rightsidebar"></div>
 
 	<img class="logo" style="float: left" src="images/logo.png" alt="my logo" />
+	
 
-	<header>
+	<header id='header'>
 		<h1>Robert Black JR portfolio</h1>
 	</header>
 
-	<nav>
-		<ul>
-			<li>
-				<a href="index.html" class="links">Home</a>
-			</li>
-			<br>
-			<li>
-				<a href="aboutme.html" class="links">About Me</a>
-			</li>
-			<br>
-			<li>
-				<a href="" class="links">Gallery</a>
-			</li>
-			<br>
-			<li>
-				<a href="contactme.html" class="links">Contact Us</a>
-			</li>
-			<br>
-			<li>
-				<a href="mypage.html" class="links">Resume</a>
-			</li>
-			<br>
-		</ul>
 
-	</nav>
 
 	<div id="divGallery">
 		<img class="Gallery" src="images/html5_logo.png" width="400" height="300" alt="HTML 5 LOGO">

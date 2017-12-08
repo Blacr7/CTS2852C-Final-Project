@@ -5,46 +5,20 @@
 	<meta charset="utf-8">
 	<title> About Me</title>
 	<link rel="stylesheet" type="text/css" href="Styles.css">
-	<script>
-		var numslides = 0;
-		var currentslide = 0;
-		var slides = new Array();
-		function StartSlideShow() {
-			var img = document.getElementsByClassName('Gallery');
-			for (var i = 0; i < img.length; i++) {
-				slides[i] = img[i];
-				if (numslides == 0) {
-					img[i].style.display = 'block';
-				} else {
-					img[i].style.display = 'none';
-				}
-				img[i].style.cursor = 'pointer';
-				img[i].onclick = NextSlide;
-				numslides++;
-			}
-		}
-		function NextSlide() {
-			slides[currentslide].style.display = 'none';
-			currentslide++;
-			if (currentslide >= numslides) currentslide = 0;
-			slides[currentslide].style.display = 'block';
-		}
-		window.onload = StartSlideShow;
-	</script>
+	<script src="Scripts/navigation.js"></script>
+	<script type="text/javascript" src="Scripts/galleryScript.js"></script>
 </head>
 
-<body>
-	<div id="leftsidebar">
-	</div>
-	<div id="rightsidebar">
-	</div>
+<body onload="navBar(1);gallery();">
+	<div id="leftsidebar"></div>
+	<div id="rightsidebar"></div>
 
-	<header>
+	<header id='header'>
 		<h1>Robert Black JR portfolio</h1>
 	</header>
 
 	<img class="logo" style="float: left" src="images/logo.png" alt="My logo" />
-
+	<!--
 	<nav>
 		<ul>
 			<li>
@@ -70,11 +44,12 @@
 		</ul>
 
 	</nav>
-
+-->
 	<div id="divGallery">
 		<img class="Gallery" src="images/me.jpg" width="400" height="500" alt="a picture of me">
 		<img class="Gallery" src="images/with_grandfather.jpg" width="400" height="500" alt="a picture of me">
 	</div>
+
 	<section>
 		<p> Hello, my name is Robert Black i am a Jamaican American college student and aspiring Web Developer/Programmer if you need
 			HTML/CSS Development, Website Maintenance, or Tech Support I am currently living in Sunrise Florida. I have been working
